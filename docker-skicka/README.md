@@ -15,5 +15,5 @@ docker run -it --rm kairyou/docker-skicka help # skicka help
 docker run -it --rm kairyou/docker-skicka -no-browser-auth ls # authorize skicka
 ```
 
-<!-- ###### Development -->
+<!-- ##### Development -->
 <!-- docker build --tag kairyou/docker-skicka . -->

@@ -1,0 +1,17 @@
+.DS_Store
+.idea
+.idea/*
+build
+build/*
+node_modules*
+ncp-debug.log
+npm-debug.log
+secrets.json
+src/stats.json
+src/config.js
+newrelic_agent.log
+*~
+*#*
+tmp/*
+
+backup_dir

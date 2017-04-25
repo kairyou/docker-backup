@@ -7,6 +7,7 @@ MAINTAINER Leon.Xu ( http://github.com/kairyou/ )
 RUN apk add --no-cache --virtual .build-deps git
 RUN go get github.com/google/skicka
 ADD skicka.config /root/.skicka.config
+RUN chmod 600 /root/.skicka.config
 
 WORKDIR /go
 # CMD ["skicka"]
