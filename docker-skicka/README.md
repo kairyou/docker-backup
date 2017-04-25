@@ -8,10 +8,12 @@ Image size: `445 MB`.
 **Recommend** to use the [docker-skicka-min](../docker-skicka-min) image instead (Smaller size, only `12.3 MB`).
 
 
-<!-- docker build --tag kairyou/docker-skicka . -->
 #### Usage
 ```sh
 docker run -it --rm kairyou/docker-skicka # skicka commands
 docker run -it --rm kairyou/docker-skicka help # skicka help
 docker run -it --rm kairyou/docker-skicka -no-browser-auth ls # authorize skicka
 ```
+
+<!-- ###### Development -->
+<!-- docker build --tag kairyou/docker-skicka . -->
