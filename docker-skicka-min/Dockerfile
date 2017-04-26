@@ -11,6 +11,8 @@ ADD skicka /bin/skicka
 ADD skicka.config /root/.skicka.config
 RUN chmod 600 /root/.skicka.config
 
-WORKDIR /root
+RUN mkdir /backup
+WORKDIR /backup
+
 # CMD ["skicka"]
 ENTRYPOINT ["skicka"]

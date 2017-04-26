@@ -9,6 +9,8 @@ RUN go get github.com/google/skicka
 ADD skicka.config /root/.skicka.config
 RUN chmod 600 /root/.skicka.config
 
-WORKDIR /go
+RUN mkdir /backup
+WORKDIR /backup
+
 # CMD ["skicka"]
 ENTRYPOINT ["skicka"]
