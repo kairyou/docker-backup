@@ -14,7 +14,7 @@ docker run -it --rm kairyou/docker-skicka-min help # skicka help
 docker run -it --rm -v $HOME/.skicka-config:/root kairyou/docker-skicka-min init # Initialize the configuration
 docker run -it --rm -v $HOME/.skicka-config:/root kairyou/docker-skicka-min -no-browser-auth ls # Google Authentication
 # Copy and paste the URL to your browser, authorize skicka, then copy the `verification code` from your browser to the terminal.
-# It will update tokenCacheFile: `/root/.skicka.tokencache.json`
+# It will update tokenCacheFile: `.skicka.tokencache.json`
 
 # usage
 docker run -it --rm -v $HOME/.skicka-config:/root kairyou/docker-skicka-min ls / # list files
@@ -50,4 +50,4 @@ docker cp tmp:/go/bin/skicka ./skicka; docker rm -f tmp;
     - Create an OAuth 2.0 client ID, name: `drive_client_1`
     - Product name shown to users: `google_drive`, Continue.
 - Download credentials, copy `client_id` and `clientsecret` into `.skicka.config`.
-- Authorize skicka, `skicka -no-browser-auth ls`.
+- Google Authentication, `skicka -no-browser-auth ls`.

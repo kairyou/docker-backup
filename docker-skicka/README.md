@@ -17,7 +17,7 @@ docker run -it --rm kairyou/docker-skicka help # skicka help
 docker run -it --rm -v $HOME/.skicka-config:/root kairyou/docker-skicka init # Initialize the configuration
 docker run -it --rm -v $HOME/.skicka-config:/root kairyou/docker-skicka -no-browser-auth ls # Google Authentication
 # Copy and paste the URL to your browser, authorize skicka, then copy the `verification code` from your browser to the terminal.
-# It will update tokenCacheFile: `/root/.skicka.tokencache.json`
+# It will update tokenCacheFile: `.skicka.tokencache.json`
 
 # usage
 docker run -it --rm -v $HOME/.skicka-config:/root kairyou/docker-skicka ls / # list files
