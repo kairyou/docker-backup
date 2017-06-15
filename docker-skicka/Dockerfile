@@ -1,15 +1,17 @@
-FROM golang:1-alpine
+FROM alpine:3.5
 
 MAINTAINER Leon.Xu ( http://github.com/kairyou/ )
 
 # https://github.com/google/skicka
 
-RUN apk add --no-cache --virtual .build-deps git
-RUN go get github.com/google/skicka
-ADD skicka.config /root/.skicka.config
-RUN chmod 600 /root/.skicka.config
+# fix x509: failed to load system roots and no roots provided
+RUN apk add --no-cache --virtual .build-deps ca-certificates
 
-RUN mkdir /backup
+ADD skicka /bin/skicka
+ADD skicka.config /root/.skicka.config
+RUN chmod 600 /root/.skicka.config \
+  && mkdir /backup
+  
 WORKDIR /backup
 
 # CMD ["skicka"]

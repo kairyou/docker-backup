@@ -2,8 +2,10 @@
 
 Backup files to Google Drive via [skicka](https://github.com/google/skicka)
 
-This image is based on the `alpine:3.5`.
-Image size: `12.9 MB`.
+## Deprecated
+This project was merged to [docker-skicka](../docker-skicka).
+
+**Recommend** to use the [docker-skicka](../docker-skicka) image instead.
 
 #### Usage
 ```sh
@@ -37,24 +39,3 @@ docker run -it --rm -v $HOME/.skicka-config:/root -v $PWD:/backup kairyou/docker
 alias skicka='docker run -it --rm -v $HOME/.skicka-config:/root -v $(pwd):/backup kairyou/docker-skicka-min'
 # skicka ls; skicka upload ./t.txt /tmp;
 ```
-
-##### Development
-*These are just some notes about development things.*
-
-```sh
-# Update the `skicka` executable from [kairyou/docker-skicka](github.com/kairyou/docker-backup/docker-skicka)
-docker run -d --name="tmp" kairyou/docker-skicka;
-docker cp tmp:/go/bin/skicka ./skicka; docker rm -f tmp;
-# docker build --tag kairyou/docker-skicka-min .
-```
-
-##### Specify `client_id` and `clientsecret`
-- [Enable Google Drive API](https://console.developers.google.com/apis/api/drive.googleapis.com/overview)
-- [Create credentials](https://console.developers.google.com/apis/credentials/wizard?api=drive.googleapis.com)
-    - Where will you be calling the API from:  `Other UI`
-    - What data will you be accessing: `User data`
-    - What credentials do I need:
-    - Create an OAuth 2.0 client ID, name: `drive_client_1`
-    - Product name shown to users: `google_drive`, Continue.
-- Download credentials, copy `client_id` and `clientsecret` into `.skicka.config`.
-- Google Authentication, `skicka -no-browser-auth ls`.

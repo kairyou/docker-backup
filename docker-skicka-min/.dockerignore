@@ -1,7 +1,7 @@
 .git
 .gitignore
 .gitattributes
-Dockerfile
+Dockerfile*
 LICENSE
 README.md
 src

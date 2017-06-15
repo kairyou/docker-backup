@@ -10,9 +10,6 @@ Image size: `18.3 MB`.
 ```sh
 docker run -it --rm kairyou/docker-dbxcli # list commands
 
-# Shortcut for `skicka` command. Open `~/.zshrc` or `~./bashrc` add the following:
-alias dbxcli='docker run -it --rm -v $HOME/.config/dbxcli:/root/.config/dbxcli -v $(pwd):/backup kairyou/docker-dbxcli'
-
 # setup
 docker run -it --rm -v $HOME/.config/dbxcli:/root/.config/dbxcli kairyou/docker-dbxcli du # Dropbox Authentication
 # Copy and paste the URL to your browser, authorize dbxcli-personal, then copy the `authorization code` from your browser to the terminal.
@@ -37,6 +34,9 @@ docker run -it --rm -v $HOME/.config/dbxcli:/root/.config/dbxcli -v $(pwd):/back
 # Move files
 docker run -it --rm -v $HOME/.config/dbxcli:/root/.config/dbxcli -v $PWD:/backup kairyou/docker-dbxcli mv source.txt destination.txt
 
+# Shortcut for `skicka` command. Open `~/.zshrc` or `~./bashrc` add the following:
+alias dbxcli='docker run -it --rm -v $HOME/.config/dbxcli:/root/.config/dbxcli -v $(pwd):/backup kairyou/docker-dbxcli'
+# dbxcli ls;
 ```
 
 <!-- ##### Development -->
