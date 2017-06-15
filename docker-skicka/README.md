@@ -20,14 +20,21 @@ docker run -it --rm -v $HOME/.skicka-config:/root kairyou/docker-skicka -no-brow
 # It will update tokenCacheFile: `.skicka.tokencache.json`
 
 # usage
-docker run -it --rm -v $HOME/.skicka-config:/root kairyou/docker-skicka ls / # list files
-docker run -it --rm -v $HOME/.skicka-config:/root kairyou/docker-skicka mkdir /tmp # create folder
 
-docker run -it --rm -v $HOME/.skicka-config:/root kairyou/docker-skicka cat /tmp/t.txt # get file contents
-docker run -it --rm -v $HOME/.skicka-config:/root kairyou/docker-skicka rm -r /tmp # remove file or folder
+# list files
+docker run -it --rm -v $HOME/.skicka-config:/root kairyou/docker-skicka ls /
+# create folder
+docker run -it --rm -v $HOME/.skicka-config:/root kairyou/docker-skicka mkdir -p /tmp
 
-docker run -it --rm -v $HOME/.skicka-config:/root -v $PWD:/backup kairyou/docker-skicka upload ./test.txt /tmp/t.txt # upload file
-docker run -it --rm -v $HOME/.skicka-config:/root -v $PWD:/backup kairyou/docker-skicka download /tmp/t.txt tmp.txt # download file to current(PWD) dir
+# get file contents
+docker run -it --rm -v $HOME/.skicka-config:/root kairyou/docker-skicka cat /tmp/t.txt
+# remove file or folder
+docker run -it --rm -v $HOME/.skicka-config:/root kairyou/docker-skicka rm -r /tmp
+
+# upload folder/file
+docker run -it --rm -v $HOME/.skicka-config:/root -v $PWD:/backup kairyou/docker-skicka upload ./folder_or_file /tmp/folder_or_file
+# download file to current(PWD) dir
+docker run -it --rm -v $HOME/.skicka-config:/root -v $PWD:/backup kairyou/docker-skicka download /tmp/t.txt tmp.txt
 
 ```
 
