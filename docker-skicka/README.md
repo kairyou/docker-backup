@@ -60,3 +60,8 @@ docker rm -f tmp;docker rmi go-skicka;
     - Product name shown to users: `google_drive`, Continue.
 - Download credentials, copy `client_id` and `clientsecret` into `.skicka.config`.
 - Google Authentication, `skicka -no-browser-auth ls`.
+
+#### FAQs
+  - x509: certificate has expired or is not yet valid
+   1. Sync system clock, e.g. `sudo ntpdate -u time.apple.com`
+   2. Restart docker, e.g. `sudo systemctl restart docker`
